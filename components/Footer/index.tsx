@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
           </h1>
           <h3 className="text-xl font-semibold text-white mt-3">Campus:</h3>
           <div className="flex gap-3 text-white justify-end mt-3">
-            <MdLocationPin className="text-3xl" />
-            <p className="text-sm">
+            <p className="text-sm flex grid-cols-2">
+              <MdLocationPin className="text-2xl w-28 left-0" />
               HETERO INSTITUTE OF PHARMACEUTICAL SCIENCES (Sai Spurthi Institute
               of Technology Campus) B. Gangaram, Sathupally, Khammam Dt.,
               Telangana – 507 303.
