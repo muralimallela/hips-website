@@ -161,7 +161,7 @@ const Eamcet: React.FC = () => {
 const StudentClub: React.FC = () => {
   return (
     <div className="bg-gray-100">
-      <div className="p-6 bg-white mt-16 lg:mx-24 rounded-xl lg:px-12">
+      <div className="p-6 overflow-hidden bg-white mt-16 lg:mx-24 rounded-xl lg:px-12">
         {/* Heading Section */}
         <div className="relative mb-12">
           <h2 className="text-center text-2xl lg:mt-6 font-bold text-gray-800">
