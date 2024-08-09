@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FontSizeProvider } from "@/utils/FontSizeContext";
+import FloatingIcons from "@/components/SocialLinks";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <FontSizeProvider>
           <Header />
-          {children}
+          <FloatingIcons />
+          <div className="mt-[105px] lg:mt-[205px] ">
+            {children}</div>
           <Footer />
         </FontSizeProvider>
       </body>

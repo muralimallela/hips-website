@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
+import React, { useEffect, useState } from "react";
+import { FaWhatsapp, FaPhone, FaEnvelope } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import Image from "next/image";
+import Link from "next/link";
 
 interface ModalProps {
   isOpen: boolean;
@@ -22,32 +26,47 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity bg-gray-900 bg-opacity-50 duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
-      style={{ transition: 'opacity 300ms ease-in-out' }}
+      className={`fixed inset-0 flex items-center justify-center z-[10000] bg-gray-900 bg-opacity-50 transition-all duration-500 ${
+        isOpen ? "opacity-100" : "opacity-0"
+      }`}
+      style={{ transition: "opacity 300ms ease-in-out" }}
     >
       <div
-        className={`bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto transform transition-transform duration-300 ${isOpen ? 'scale-100' : 'scale-95'}`}
-        style={{ transition: 'transform 300ms ease-in-out' }}
+        className={`bg-[#fefefa] p-1 rounded-lg shadow-lg  mx-auto transform transition-transform duration-500 ${
+          isOpen ? "scale-100" : "scale-95"
+        }`}
+        style={{ transition: "transform 300ms ease-in-out",backgroundImage:"url('1.png')", backgroundSize:"cover" }}
       >
-        <div className="flex justify-between items-center border-b pb-4 mb-4">
-          <h2 className="text-xl font-semibold">HIPS - Hetero Institute of Pharmaceutical Sciences</h2>
+        <div className="flex justify-end items-center absolute top-1 lg:top-3 right-1 lg:right-3">
+          {/* <h2 className="text-xl font-semibold">
+            HIPS - Hetero Institute of Pharmaceutical Sciences
+          </h2> */}
           <button
             onClick={onClose}
-            className="text-gray-600 hover:text-gray-900"
+            className="text-white hover:text-gray-900 text-3xl ml-6 "
           >
-            &times;
+            <IoMdCloseCircleOutline />
           </button>
         </div>
-        <div className="text-center mb-6">
-          <p className="text-lg mb-4">Welcome to HIPS, Admissions are open</p>
-          <a
-            href="#apply"
-            className="inline-block px-4 py-2 mb-4 text-white bg-blue-500 rounded hover:bg-blue-600"
-          >
-            Apply Now
-          </a>
+        <div className="text-center">
+          <Link href="/admissions">
+            <div className="flex absolute bottom-20 md:bottom-24 ">
+              <button
+                onClick={onClose}
+                className=" h-10 md:h-16 md:w-40 lg:h-16 w-28 lg:w-40  hover:text-gray-900 text-3xl"
+              ></button>
+            </div>
+          </Link>
+
+          <Image
+            src="/hips-apply.gif"
+            alt="hips admission"
+            width={600}
+            height={200}
+            className="rounded-md"
+          />
         </div>
-        <div className="flex justify-center space-x-4">
+        <div className="flex mt-1 justify-center mb-1 space-x-4">
           <a
             href="https://wa.me/9441797744"
             target="_blank"
@@ -55,7 +74,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             rel="noopener noreferrer"
             className="text-green-500 hover:text-green-600"
           >
-            <FaWhatsapp size={24} />
+            <FaWhatsapp size={28} />
           </a>
           <a
             href="tel:9441797744"

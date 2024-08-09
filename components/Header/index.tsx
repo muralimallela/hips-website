@@ -70,7 +70,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className=" ">
+      <header className="">
         <section className={`w-full min-h-8 bg-[#006401] `}>
           <div className="flex flex-col md:flex-row justify-between gap-y-2 p-2 text-white">
             <div className="flex flex-wrap items-center text-xs gap-x-4 gap-y-2">
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
             </div>
             <div className="flex  gap-3 mt-2 md:mt-0 justify-center items-center px-2">
               {socialLinks.map(({ href, icon, label }) => (
-                <a key={label} href={href} aria-label={label}>
+                <a key={label} href={href} target="_blank" aria-label={label}>
                   {icon}
                 </a>
               ))}

@@ -1,22 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
-import YourComponent from "@/components/FacultyRequirement";
-import FloatingIcons from "@/components/SocialLinks";
+import FacultyRequirement from "@/components/FacultyRequirement";
+
 import Modal from "@/components/IndexModal";
+
 function Page() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const closeModal = () => setIsModalOpen(false);
-  return (
-    <div className="mt-[105px] lg:mt-[205px] ">
-      <Hero />
-      <YourComponent />
-      <FloatingIcons />
 
+  return (
+    <>
+      <Hero />
+      <FacultyRequirement />
       <Modal isOpen={isModalOpen} onClose={closeModal} />
-    </div>
+    </>
   );
 }
 

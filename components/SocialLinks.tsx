@@ -54,7 +54,7 @@ const FloatingIcons: React.FC = () => {
         </li>
         <li>
           <a
-            href="#"
+            href="https://wa.me/9440154950" target="_blank"
             className="group flex items-center bg-[#43e460] text-white w-9 h-9 transition-all duration-300 lg:hover:w-36 lg:hover:rounded-r-md px-2"
           >
             <div><MdOutlineWhatsapp className="text-xl" /></div>
