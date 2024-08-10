@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FaWhatsapp, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { FaPhone } from "react-icons/fa6";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
-
+import { FaSquareWhatsapp } from "react-icons/fa6";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -74,19 +75,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             rel="noopener noreferrer"
             className="text-green-500 hover:text-green-600"
           >
-            <FaWhatsapp size={28} />
+            <FaSquareWhatsapp size={30} />
           </a>
           <a
             href="tel:9441797744"
-            className="text-blue-500 hover:text-blue-600"
+            className="text-blue-500 hover:text-blue-600 border-2 flex py-0.5 lg:py-1 px-1  border-blue-500 rounded-full justify-center items-center"
           >
-            <FaPhone size={24} />
+            <FaPhone size={20} />
           </a>
           <a
             href="mailto:hips.r.principal@gmail.com"
             className="text-red-500 hover:text-red-600"
           >
-            <FaEnvelope size={24} />
+            <Image src="/gmail.svg" alt="gmail" width={30} height={30} />
           </a>
         </div>
       </div>
